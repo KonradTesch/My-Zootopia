@@ -27,21 +27,24 @@ def display_data(data):
 
 def generate_html_string(data):
     html_string = ""
+    end_string = "<br/>\n"
     for animal in data:
+        html_string += '<li class= "cards__item">'
         name = animal['name']
-        html_string += f"Name: {name}\n"
+        html_string += f"Name: {name}" + end_string
 
         if 'diet' in animal['characteristics'].keys():
             diet = animal['characteristics']['diet']
-            html_string += f"Diet: {diet}\n"
+            html_string += f"Diet: {diet}" + end_string
 
         locations = animal['locations']
         locations = ", ".join(locations)
-        html_string += f"Location: {locations}\n"
+        html_string += f"Location: {locations}" + end_string
 
         if 'type' in animal['characteristics'].keys():
             animal_type = animal['characteristics']['type']
-            html_string += f"Type: {animal_type}\n\n"
+            html_string += f"Type: {animal_type}" + end_string
+            html_string += "</li>\n"
 
     return html_string
 
@@ -57,6 +60,7 @@ def manipulate_html_file(html_string):
 def main():
     data = load_data()
     html_string = generate_html_string(data)
+
     manipulate_html_file(html_string)
 
 
