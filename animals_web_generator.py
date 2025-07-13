@@ -32,19 +32,19 @@ def serialize_animal_info(animal):
     if 'diet' in animal['characteristics'].keys():
         diet = animal['characteristics']['diet']
         # add diet info
-        html_string += f"<li>{strong_html_string("Diet:")}: {diet}</li>\n"
+        html_string += f"<li>{strong_html_string("Diet:")} {diet}</li>\n"
 
     locations = animal['locations']
     # separates all locations with a ','
     locations = ", ".join(locations)
 
     # add location info
-    html_string += f"<li>{strong_html_string("Location:")}: {locations}</li>\n"
+    html_string += f"<li>{strong_html_string("Location:")} {locations}</li>\n"
 
     if 'type' in animal['characteristics'].keys():
         animal_type = animal['characteristics']['type']
         # add type info
-        html_string += f"<li>{strong_html_string("Type:")}: {animal_type}</li>\n"
+        html_string += f"<li>{strong_html_string("Type:")} {animal_type}</li>\n"
 
 
     html_string += f"</ul>\n</div>\n</li>\n\n"
